@@ -3,3 +3,5 @@ export const CLEARTODO = "CLEARTODO";
 export const DELETETODO = "DELETETODO";
 export const COMPLETEDTODO = "COMPLETEDTODO";
 export const ADDTODO = "ADDTODO";
+export const SHOWCOMPLETED = "SHOWCOMPLETED";
+export const CLEARCOMPLETED = "CLEARCOMPLETED";

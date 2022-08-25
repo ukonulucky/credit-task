@@ -1,4 +1,4 @@
-import { ADDTODO, CLEARTODO,DELETETODO,COMPLETEDTODO,FILTERTODO} from "./types";
+import { ADDTODO, CLEARTODO,DELETETODO,COMPLETEDTODO,FILTERTODO, SHOWCOMPLETED, CLEARCOMPLETED} from "./types";
 
 
 const initialState = {
@@ -17,17 +17,27 @@ const stateReducer = (state = initialState, action) => {
            break;
    
        case ADDTODO:
-          
+    
             return {
-              todo:[...state, action.payload]
+                todo: [...state.todo, {
+                    item: action.payload,
+                    done: false,
+                    id:Math.random()
+              }]
             }
             break;
         
         case DELETETODO:
-            const item = state.todo.findIndex(i => i.index === action.payload)
-            const todoModified = state.todo.splice(item,1)
+            
+            const itemIndex = state.todo.findIndex(i => i.id === action.payload)
+            const newTodoList = [...state.todo]
+            if (itemIndex >=  0) {
+                const todoModified = newTodoList.splice(itemIndex, 1)
+            } else {
+                console.warn("item not in the basket")
+            }
                  return {
-                     ...state
+                     todo:[...newTodoList]
                  }
             break;
         case CLEARTODO:
@@ -35,7 +45,30 @@ const stateReducer = (state = initialState, action) => {
                  return {
                      todo :  []
                  }
-            break;      
+            break;   
+            case SHOWCOMPLETED:
+            const completedTodo = state.todo.filter(i => i.done === true)
+                return {
+                    ...state, completedTodo:  [...completedTodo]
+                }
+            break;  
+            case CLEARCOMPLETED:
+                const clearCompletedTodo = state.todo.filter(i => i.done === false)
+                    return {
+                        todo :  [...clearCompletedTodo]
+                    }
+               break;  
+        case COMPLETEDTODO:
+            console.log(action.payload)
+            const checkedIndex = state.todo.findIndex(i => i.id === action.payload)
+            state.todo[checkedIndex] = {
+                    ...state.todo[checkedIndex], done:true
+            }
+            console.log(state.todo[checkedIndex])
+            return {
+                    todo :  [...state.todo]
+                }
+           break; 
        default: return state
            break;
    }

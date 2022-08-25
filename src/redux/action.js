@@ -1,5 +1,6 @@
-import {ADDTODO,COMPLETEDTODO,DELETETODO,CLEARTODO,FILTERTODO} from "./types"
+import {ADDTODO,COMPLETEDTODO,DELETETODO,CLEARTODO,FILTERTODO, SHOWCOMPLETED, CLEARCOMPLETED} from "./types"
 export const addTodo = (info) => {
+   
     return {
         type: ADDTODO,
         payload: info
@@ -19,17 +20,29 @@ export const clearTodo = (info) => {
     }
 }
 
-export const depositUser = (info) => {
+export const completedTodo = (info) => {
     return {
-        type: DEPOSIT,
+        type: COMPLETEDTODO,
         payload:info
-        
     }
-   
 }
+
+
 export const filterTodo = (info) => {
     return {
         type: FILTERTODO,
        payload:info
+    }
+}
+
+export const showCompeleted = (info) => {
+    return {
+        type: SHOWCOMPLETED,
+    }
+}
+
+export const clearCompeleted = (info) => {
+    return {
+        type: CLEARCOMPLETED,
     }
 }

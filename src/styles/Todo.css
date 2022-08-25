@@ -1,0 +1,315 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
+}
+
+.wrapperOne {
+  width: 100%;
+  height: 40vh;
+  position: relative;
+}
+
+.wrapperOne img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapperOne .toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.wrapper {
+  position: absolute;
+  padding: 0 10px;
+  top: 10vh;
+  left: 15vw;
+  width: 70vw;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    top: 15vh;
+    left: 2vw;
+    width: 90vw;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .wrapper {
+    top: 15vh;
+    left: 8vw;
+    width: 84vw;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .wrapper {
+    left: 15vw;
+    width: 70vw;
+  }
+}
+
+.wrapper .todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper .todo {
+    width: 100%;
+  }
+}
+
+.wrapper .todo h1 {
+  font-size: 3.5rem;
+  font-weight: bolder;
+  color: white;
+  letter-spacing: 10px;
+}
+
+.wrapper .todo img {
+  width: 30px;
+  height: 30px;
+}
+
+.wrapper .inputDiv {
+  height: 80px;
+  background-color: #0c092c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  color: lightgray;
+  padding: 0 20px;
+}
+
+.wrapper .inputDiv form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .inputDiv form input {
+  border: 0;
+  outline: none;
+  padding: 20px 10px;
+  width: 100%;
+  height: 90%;
+  background-color: inherit;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.wrapper .todoList {
+  margin-top: 40px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #0c092c;
+  overflow: hidden;
+}
+
+.wrapper .todoList .others {
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.2rem;
+  color: whitesmoke;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper .todoList .others {
+    padding: 15px 0px;
+    font-size: 0.8rem;
+    width: 100vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
+}
+
+.wrapper .todoList .others span {
+  cursor: pointer;
+}
+
+.wrapper .todoList .others div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper .todoList .others div {
+    -webkit-column-gap: 0px;
+            column-gap: 0px;
+  }
+}
+
+.wrapper .todoList .others div span {
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper .todoList .others div span {
+    padding: 0 5px;
+  }
+}
+
+.wrapper .todoList .others div span:first-of-type {
+  color: blue;
+}
+
+.text {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  padding: 10px;
+  color: whitesmoke;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.text .radio {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#29d077), to(#452645));
+  background-image: linear-gradient(to bottom right, #29d077, #452645);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+}
+
+@media screen and (max-width: 480px) {
+  .text .radio {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.text .radio span:first-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.text .radio span:first-of-type img {
+  width: 15px;
+  height: 15px;
+  padding-left: 10px;
+  background-color: transparent;
+}
+
+.text img {
+  margin-left: auto;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.text span {
+  margin-left: 20px;
+}
+
+.new {
+  background-color: #0c092c;
+}
+
+.img-hide {
+  display: none;
+}
+
+.remove {
+  border: 1px solid gray;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 50px;
+  padding-left: 0px;
+}
+
+.error {
+  color: red;
+}
+
+.center {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: block;
+  width: 100%;
+  font-size: 1.5rem;
+  color: grey;
+  margin-bottom: 40px;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+}
+/*# sourceMappingURL=Todo.css.map */
